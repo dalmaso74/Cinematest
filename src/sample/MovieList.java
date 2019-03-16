@@ -17,10 +17,12 @@ public class MovieList{
 
     public MovieList() {
 
-        Movie m1 = new Movie("Mulan", "Animation", "U", 88, 5.00,"TheaterOne","19:00",
+        Movie m1 = new Movie("Mulan", "Animation", "U", 88, 5.00,"Theater One",
+                "19:00",
                 new File("/image/mulan.png"));
 
-        Movie m2 = new Movie("Spiderman", "Action", "PG13", 116, 5.50,"TheaterTwo","14:00",
+        Movie m2 = new Movie("Spiderman", "Action", "PG13", 116, 5.50,"Theater Two",
+                "14:00",
                 new File("/image/spider.jpg"));
 //
 //        Movie GetOut = new Movie("GetOut", "Thriller", "R", 90, 6.00,
