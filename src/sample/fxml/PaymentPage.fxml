@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PaymentPageController">
+   <children>
+      <Button layoutX="339.0" layoutY="353.0" mnemonicParsing="false" onAction="#cashPayment" prefHeight="33.0" prefWidth="119.0" text="Cash" />
+      <Button layoutX="468.0" layoutY="353.0" mnemonicParsing="false" onAction="#cardPayment" prefHeight="33.0" prefWidth="119.0" text="Card" />
+      <Label fx:id="displayPayment" alignment="TOP_LEFT" layoutX="153.0" layoutY="33.0" prefHeight="287.0" prefWidth="315.0" text="Receipt" />
+   </children>
+</AnchorPane>

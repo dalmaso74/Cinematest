@@ -24,8 +24,8 @@ public class ShowingMovieController implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
-        displayMovieTime.setText(selected.getTheater ()+ "    " +selected.getShowtime());
-        displayTitle.setText(selected.getTitle()+"\n" + "£ " + selected.getPrice());
+        displayMovieTime.setText(selected.getTheater ()+ "    " +selected.getShowtime()+"\n" + "£ " + selected.getPrice());
+        displayTitle.setText(selected.getTitle());
     }
 
     public void Btnback(ActionEvent actionEvent) throws IOException{

@@ -3,7 +3,7 @@ package sample;
 import java.util.ArrayList;
 
 /**
- * Created by u1863558 on 16/03/2019.
+ * Created by u1863558 on 01/02/2009.
  */
 public class SnacksList {
     private ArrayList<Snacks> food = new ArrayList<>();
@@ -15,6 +15,8 @@ public class SnacksList {
     public  ArrayList<Snacks> getDrink() {
         return drink;
     }
+
+
     public SnacksList(){
 
         Snacks s1 = new Snacks("Haribo","Food",2.00);

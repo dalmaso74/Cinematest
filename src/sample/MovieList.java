@@ -10,10 +10,11 @@ import java.util.ArrayList;
 
 public class MovieList{
     private ArrayList<Movie> movies = new ArrayList<>();
-
+    private ArrayList<Movie> movieSec = new ArrayList<>();
     public ArrayList<Movie> getMovies() {
         return movies;
     }
+    public ArrayList<Movie> getMovieSec(){return movieSec;}
 
     public MovieList() {
 
@@ -26,18 +27,32 @@ public class MovieList{
                 "Theater Two",
                 "14:00",
                 new File("/image/spider.jpg"));
-//
-//        Movie GetOut = new Movie("GetOut", "Thriller", "R", 90, 6.00,
-//                new File("/image/getOut.png"));
-//
-//        Movie HalfBaked = new Movie("HalfBaked", "Comedy", "R", 90, 5.00,
-//                new File("/image/half.jpg"));
-//
-//        Movie Kumar = new Movie("Harold", "Comedy", "R", 88, 5.00,
-//                new File("/image/Harold&Kumar.JPG"));
+
+        Movie m3 = new Movie("GetOut", "Thriller", "R", 90, 6.00,
+                "Theater Three",
+                "17:00",
+                new File("/image/getOut.png"));
+
+        Movie m4 = new Movie("Half Baked", "Comedy", "R", 90, 5.00,
+                "Theater Four",
+                "14:00",
+                new File("/image/half.jpg"));
+
+        Movie m5 = new Movie("Harold and Kumar", "Comedy", "R", 88, 5.00,
+                "Theater Five",
+                "19:00",
+                new File("/image/Harold&Kumar.JPG"));
+
+        Movie m6 = new Movie("Logan", "Comedy", "R", 88, 5.00,
+                "Theater Five",
+                "19:00",
+                new File("/image/Harold&Kumar.JPG"));
 
         movies.add(m2);
         movies.add(m1);
-
+        movies.add(m3);
+        movies.add(m4);
+        movies.add(m5);
+        movieSec.add(m6);
     }
 }

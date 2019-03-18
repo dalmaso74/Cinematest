@@ -6,54 +6,46 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by u1863558 on 14/03/2019.
+ * Created by u1863558 on 18/03/2019.
  */
-public class WeekOnePaneController {
-        
+public class WeekTwoPaneController {
+
     @FXML
-    private TextArea displayInformation ;
+    private TextArea displayedInfo;
     private MovieList movieList = new MovieList();
     private Movie selectedMovie;
-    private Button BtnBooking;
+
+    private ArrayList<Movie> movieTwo = new ArrayList<>(movieList.getMovieSec());
 
 
-    private ArrayList<Movie> movieLs = new ArrayList<>(movieList.getMovies());
-
-
-    public void openMulan(ActionEvent actionEvent) {
-    setMovie("Mulan");
+    public void openLogan(ActionEvent actionEvent) {
+        setMovie("Logan");
     }
-    public void openSpiderman(ActionEvent actionEvent){
-        setMovie("Spiderman");
-    }
-    public void openHalfBaked(ActionEvent actionEvent) {setMovie("GetOut");}
-    public void openGetOut(ActionEvent actionEvent) {setMovie("Half Baked");}
-    public void openHaroldAndKumar(ActionEvent actionEvent) {setMovie("Harold and Kumar");}
-
 
     private void setMovie(String movieName) {
-        for (Movie movie : movieLs) {
+        System.out.println("simon");
+        for (Movie movie : movieTwo) {
             if (movie.getTitle().equals(movieName)) {
-                displayInformation.setText
+                System.out.println("jim");
+                displayedInfo.setText
                         ("Movie:  " + movie.getTitle() + "\n" + "Genre:  " + movie.getGenre() + "\n" +
                                 "Rating: " + movie.getRating() + "\n" + "Length: " + movie.getLength() + "\n" +
                                 "Theater: " + movie.getTheater() + "\n" + "Price:  " + movie.getPrice());
                 selectedMovie = movie;
-                Main.selectedMovie = movie;
 
             }
-
         }
     }
+
+
     public void sendBooking(ActionEvent actionEvent) throws IOException {
 
         Parent firstWeekParent = FXMLLoader.load(getClass().getResource("fxml/Showing.fxml"));
@@ -61,9 +53,5 @@ public class WeekOnePaneController {
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         window.setScene(mainMenuPageScene);
         window.show();
-
-
     }
-
 }
-

@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     public static Movie selectedMovie = null;
+    private static double totalPrice;
 //    private static String movingTest;
 
     @Override
@@ -17,6 +18,14 @@ public class Main extends Application {
         primaryStage.setTitle("Cinema");
         primaryStage.setScene(new Scene(root, 1026, 700));
         primaryStage.show();
+    }
+
+    public static double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public static void setTotalPrice(double totalPrice) {
+        Main.totalPrice = totalPrice;
     }
 //    public static String getMovingTest() {
 //        return movingTest;
