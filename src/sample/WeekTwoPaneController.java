@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
@@ -47,7 +48,6 @@ public class WeekTwoPaneController {
 
 
     public void sendBooking(ActionEvent actionEvent) throws IOException {
-
         Parent firstWeekParent = FXMLLoader.load(getClass().getResource("fxml/Showing.fxml"));
         Scene mainMenuPageScene = new Scene(firstWeekParent);
         Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
