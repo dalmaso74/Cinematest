@@ -46,19 +46,18 @@ public class BookingController {
         ticketBooked.setText("" + ticketNumber);
         totalPrice.setText(gb.format(ticketOfMovie));
     }
+
     public void subMovie(ActionEvent actionEvent) {
-        ticketOfMovie = ticketOfMovie - Main.selectedMovie.getPrice();
-        ticketNumber = ticketNumber - 1;
-        ticketBooked.setText("" + ticketNumber);
-        totalPrice.setText(gb.format(ticketOfMovie));
-
-        if (ticketNumber <= 0){
-            ticketNumber = ticketNumber + 1;
-            ticketOfMovie = ticketOfMovie + Main.selectedMovie.getPrice();
+        if (ticketNumber <= 0) {
+            System.out.println("Cannot take away anymore tickets");
+        } else {
+            ticketNumber = ticketNumber - 1;
+            ticketOfMovie = ticketOfMovie - Main.selectedMovie.getPrice();
+            ticketBooked.setText("" + ticketNumber);
+            totalPrice.setText(gb.format(ticketOfMovie));
         }
-
     }
-
+//Add Snacks and Drinks
     public void addSnack(ActionEvent actionEvent) {
         if (comboFood.getValue().equals("Haribo")){
             ticketOfMovie = ticketOfMovie + hariboPrice;
@@ -89,60 +88,57 @@ public class BookingController {
             totalPrice.setText(gb.format(ticketOfMovie));
         }
     }
-
+//    Sub Snacks and Drinks
     public void subSnack(ActionEvent actionEvent) {
         if (comboFood.getValue().equals("Haribo")){
-            ticketOfMovie = ticketOfMovie - hariboPrice;
-            hariboNumber = hariboNumber - 1;
-            tolHaribo.setText("" + hariboNumber);
-            totalPrice.setText(gb.format(ticketOfMovie));
+
+            if (hariboNumber <=0){
+                System.out.println("error negative value");
+            }else{
+                ticketOfMovie = ticketOfMovie - hariboPrice;
+                hariboNumber = hariboNumber - 1;
+                tolHaribo.setText("" + hariboNumber);
+                totalPrice.setText(gb.format(ticketOfMovie));
+            }
         }
         if (comboFood.getValue().equals("Popcorn")){
-            ticketOfMovie = ticketOfMovie - popCornPrice;
-            popcornNumber = popcornNumber - 1;
-            tolPop.setText("" + popcornNumber);
-            totalPrice.setText(gb.format(ticketOfMovie));
-        }
 
-        if (hariboNumber <= 0){
-            hariboNumber = hariboNumber + 1;
-            ticketOfMovie = ticketOfMovie + hariboPrice;
+            if (popcornNumber <=0){
+                    System.out.println("error negative value");
+                }else{
+                    ticketOfMovie = ticketOfMovie - popCornPrice;
+                popcornNumber = popcornNumber - 1;
+                tolPop.setText("" + popcornNumber);
+                totalPrice.setText(gb.format(ticketOfMovie));
+            }
         }
-
-        if (popcornNumber <= 0){
-            popcornNumber = popcornNumber + 1;
-            ticketOfMovie = ticketOfMovie + popCornPrice;
-        }
-
     }
 
     public void subDrink(ActionEvent actionEvent) {
+
         if (comboDrink.getValue().equals("Fanta")){
-            ticketOfMovie = ticketOfMovie - drinkPrice;
-            fantaNumber = fantaNumber - 1;
-            tolFanta.setText("" + fantaNumber);
-            totalPrice.setText(gb.format(ticketOfMovie));
+            System.out.println("Not Fanta");
+            if (fantaNumber <=0){
+                System.out.println("error negative value");
+            }else{
+                ticketOfMovie = ticketOfMovie - drinkPrice;
+                fantaNumber = fantaNumber - 1;
+                tolFanta.setText("" + fantaNumber);
+                totalPrice.setText(gb.format(ticketOfMovie));
+            }
         }
 
         if (comboDrink.getValue().equals("Coke")){
-            ticketOfMovie = ticketOfMovie - drinkPrice;
-            cokeNumber = cokeNumber - 1;
-            tolCoke.setText("" + cokeNumber);
-            totalPrice.setText(gb.format(ticketOfMovie));
+            System.out.println("Not coke");
+            if (cokeNumber <=0){
+                System.out.println("error negative value");
+            }else{
+                ticketOfMovie = ticketOfMovie - drinkPrice;
+                cokeNumber = cokeNumber - 1;
+                tolCoke.setText("" + cokeNumber);
+                totalPrice.setText(gb.format(ticketOfMovie));
+            }
         }
-
-        if (fantaNumber <= 1){
-            fantaNumber = fantaNumber + 1;
-            ticketOfMovie = ticketOfMovie + drinkPrice;
-        }
-
-        if (cokeNumber <= 1){
-            cokeNumber = cokeNumber + 1;
-            ticketOfMovie = ticketOfMovie + drinkPrice;
-        }
-
-
-
     }
 
     public void sentToPayment(ActionEvent actionEvent)throws IOException {
