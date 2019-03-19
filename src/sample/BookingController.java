@@ -115,9 +115,8 @@ public class BookingController {
     }
 
     public void subDrink(ActionEvent actionEvent) {
-
         if (comboDrink.getValue().equals("Fanta")){
-            System.out.println("Not Fanta");
+            System.out.println("no Fanta");
             if (fantaNumber <=0){
                 System.out.println("error negative value");
             }else{
@@ -129,7 +128,7 @@ public class BookingController {
         }
 
         if (comboDrink.getValue().equals("Coke")){
-            System.out.println("Not coke");
+            System.out.println("No coke");
             if (cokeNumber <=0){
                 System.out.println("error negative value");
             }else{

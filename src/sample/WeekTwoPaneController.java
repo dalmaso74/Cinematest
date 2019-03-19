@@ -41,7 +41,7 @@ public class WeekTwoPaneController {
                                 "Rating: " + movie.getRating() + "\n" + "Length: " + movie.getLength() + "\n" +
                                 "Theater: " + movie.getTheater() + "\n" + "Price:  " + movie.getPrice());
                 selectedMovie = movie;
-
+                Main.selectedMovie = movie;
             }
         }
     }
