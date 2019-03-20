@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.org.apache.xpath.internal.functions.FuncFalse;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,17 +19,20 @@ import java.util.ResourceBundle;
  */
 public class ShowingMovieController implements Initializable{
     public Movie selected = Main.selectedMovie;
-    public Label displayTitle;
+    public Label displayTitle,checkID;
     public Label displayMovieTime;
 // TODO: get images in
     // TODO: age restriction
 
     @Override
-    public void initialize(URL location, ResourceBundle resources){
-        displayMovieTime.setText(selected.getTheater ()+ "    " +selected.getShowtime()+"\n" + "£ " + selected.getPrice());
+    public void initialize(URL location, ResourceBundle resources) {
+        displayMovieTime.setText(selected.getTheater() + "    " + selected.getShowtime() + "\n" + "£ " + selected.getPrice());
         displayTitle.setText(selected.getTitle());
-    }
+//        if (selected.getRating().equals("R")) {
+//            checkID.setText("Check User ID");
+//        }
 
+    }
     public void Btnback(ActionEvent actionEvent) throws IOException{
         Parent firstWeekParent = FXMLLoader.load(getClass().getResource("fxml/First_week.fxml"));
         Scene mainMenuPageScene = new Scene(firstWeekParent);

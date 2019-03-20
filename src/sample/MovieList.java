@@ -51,7 +51,7 @@ public class MovieList{
         Movie m7 = new Movie("GreenBook", "Drama", "PG13", 70, 6.00,
                 "Theater Seven",
                 "17:00",
-                new File("/image/greenBook.png"));
+                new File("/image/greenBook.jpg"));
 
         Movie m8 = new Movie("DeadPool", "Action/Comedy", "R", 86, 5.60,
                 "Theater Eight",

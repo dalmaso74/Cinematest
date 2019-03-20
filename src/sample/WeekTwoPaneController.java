@@ -33,7 +33,7 @@ public class WeekTwoPaneController {
     public void openGreenBook(ActionEvent actionEvent) {
         setMovie("GreenBook");
     }
-    public void openDeadPool(ActionEvent actionEvent) {
+    public void openDeadpool(ActionEvent actionEvent) {
         setMovie("DeadPool");
     }
     public void openTheLegoMovie(ActionEvent actionEvent) {
