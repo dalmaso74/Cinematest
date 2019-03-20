@@ -20,7 +20,8 @@ public class ShowingMovieController implements Initializable{
     public Movie selected = Main.selectedMovie;
     public Label displayTitle;
     public Label displayMovieTime;
-
+// TODO: get images in
+    // TODO: age restriction
 
     @Override
     public void initialize(URL location, ResourceBundle resources){

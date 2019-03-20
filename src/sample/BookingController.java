@@ -25,6 +25,7 @@ public class BookingController {
     public Label tolPop, tolHaribo, priceLabel, tolCoke, tolFanta;
     private int ticketNumber, hariboNumber, popcornNumber, fantaNumber, cokeNumber;
     private double ticketOfMovie,hariboPrice = 2.00,popCornPrice = 1.70, drinkPrice = 1.50;
+    private double priceTickets,priceHaribo,pricePopCorn,priceFanata,priceCoke;
     private NumberFormat gb = NumberFormat.getCurrencyInstance(Locale.UK);
     public ComboBox<String> comboDrink;
     public ComboBox<String> comboFood;
@@ -43,6 +44,7 @@ public class BookingController {
     public void addMovie(ActionEvent actionEvent) {
         ticketOfMovie = ticketOfMovie + Main.selectedMovie.getPrice();
         ticketNumber = ticketNumber + 1;
+        priceTickets = priceTickets + Main.selectedMovie.getPrice();
         ticketBooked.setText("" + ticketNumber);
         totalPrice.setText(gb.format(ticketOfMovie));
     }
@@ -52,6 +54,7 @@ public class BookingController {
             System.out.println("Cannot take away anymore tickets");
         } else {
             ticketNumber = ticketNumber - 1;
+            priceTickets = priceTickets - Main.selectedMovie.getPrice();
             ticketOfMovie = ticketOfMovie - Main.selectedMovie.getPrice();
             ticketBooked.setText("" + ticketNumber);
             totalPrice.setText(gb.format(ticketOfMovie));
@@ -62,12 +65,14 @@ public class BookingController {
         if (comboFood.getValue().equals("Haribo")){
             ticketOfMovie = ticketOfMovie + hariboPrice;
             hariboNumber = hariboNumber + 1;
+            priceHaribo = priceHaribo + hariboPrice;
             tolHaribo.setText("" + hariboNumber);
             totalPrice.setText(gb.format(ticketOfMovie));
         }
         if (comboFood.getValue().equals("Popcorn")){
             ticketOfMovie = ticketOfMovie + popCornPrice;
             popcornNumber = popcornNumber + 1;
+            pricePopCorn = pricePopCorn + popCornPrice;
             tolPop.setText("" + popcornNumber);
             totalPrice.setText(gb.format(ticketOfMovie));
         }
@@ -77,6 +82,7 @@ public class BookingController {
         if (comboDrink.getValue().equals("Fanta")){
             ticketOfMovie = ticketOfMovie + drinkPrice;
             fantaNumber = fantaNumber + 1;
+            priceFanata = priceFanata + drinkPrice;
             tolFanta.setText("" + fantaNumber);
             totalPrice.setText(gb.format(ticketOfMovie));
         }
@@ -84,6 +90,7 @@ public class BookingController {
         if (comboDrink.getValue().equals("Coke")){
             ticketOfMovie = ticketOfMovie + drinkPrice;
             cokeNumber = cokeNumber + 1;
+            priceCoke = priceCoke + drinkPrice;
             tolCoke.setText("" + cokeNumber);
             totalPrice.setText(gb.format(ticketOfMovie));
         }
@@ -97,6 +104,7 @@ public class BookingController {
             }else{
                 ticketOfMovie = ticketOfMovie - hariboPrice;
                 hariboNumber = hariboNumber - 1;
+                priceHaribo = priceHaribo - hariboPrice;
                 tolHaribo.setText("" + hariboNumber);
                 totalPrice.setText(gb.format(ticketOfMovie));
             }
@@ -108,6 +116,7 @@ public class BookingController {
                 }else{
                     ticketOfMovie = ticketOfMovie - popCornPrice;
                 popcornNumber = popcornNumber - 1;
+                pricePopCorn = pricePopCorn - popCornPrice;
                 tolPop.setText("" + popcornNumber);
                 totalPrice.setText(gb.format(ticketOfMovie));
             }
@@ -122,6 +131,7 @@ public class BookingController {
             }else{
                 ticketOfMovie = ticketOfMovie - drinkPrice;
                 fantaNumber = fantaNumber - 1;
+                priceFanata = priceFanata + drinkPrice;
                 tolFanta.setText("" + fantaNumber);
                 totalPrice.setText(gb.format(ticketOfMovie));
             }
@@ -134,6 +144,7 @@ public class BookingController {
             }else{
                 ticketOfMovie = ticketOfMovie - drinkPrice;
                 cokeNumber = cokeNumber - 1;
+                priceCoke = priceCoke + drinkPrice;
                 tolCoke.setText("" + cokeNumber);
                 totalPrice.setText(gb.format(ticketOfMovie));
             }
@@ -142,6 +153,10 @@ public class BookingController {
 
     public void sentToPayment(ActionEvent actionEvent)throws IOException {
         Main.setTotalPrice(ticketOfMovie);
+        Main.setPriceHaribo(priceHaribo);
+        Main.setPricePopCorn(pricePopCorn);
+        Main.setPriceFanta(priceFanata);
+        Main.setPriceCoke(priceCoke);
 
         Parent paymentPageController = FXMLLoader.load(getClass().getResource("fxml/PaymentPage.fxml"));
         Scene paymentPageScene = new Scene(paymentPageController);

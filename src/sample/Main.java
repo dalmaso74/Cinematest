@@ -10,7 +10,8 @@ public class Main extends Application {
 
     public static Movie selectedMovie = null;
     private static double totalPrice;
-//    private static String movingTest;
+    private static double priceHaribo, pricePopCorn, priceFanta, priceCoke;
+// TODO: get moviePrice
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -27,6 +28,39 @@ public class Main extends Application {
     public static void setTotalPrice(double totalPrice) {
         Main.totalPrice = totalPrice;
     }
+
+    public static double getPriceHaribo() {
+        return priceHaribo;
+    }
+
+    public static void setPriceHaribo(double priceHaribo) {
+        Main.priceHaribo = priceHaribo;
+    }
+
+    public static double getPricePopCorn() {
+        return pricePopCorn;
+    }
+
+    public static void setPricePopCorn(double pricePopCorn) {
+        Main.pricePopCorn = pricePopCorn;
+    }
+
+    public static double getPriceFanta() {
+        return priceFanta;
+    }
+
+    public static void setPriceFanta(double priceFanta) {
+        Main.priceFanta = priceFanta;
+    }
+
+    public static double getPriceCoke() {
+        return priceCoke;
+    }
+
+    public static void setPriceCoke(double priceCoke) {
+        Main.priceCoke = priceCoke;
+    }
+
 //    public static String getMovingTest() {
 //        return movingTest;
     //}

@@ -24,7 +24,7 @@ public class Movie {
         this.theater = theater;
         this.showtime = showtime;
         this.image = image;
-
+// TODO: seat limit
 
     }
 
