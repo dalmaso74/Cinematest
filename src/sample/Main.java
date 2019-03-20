@@ -10,8 +10,10 @@ public class Main extends Application {
 
     public static Movie selectedMovie = null;
     private static double totalPrice;
-    private static double priceHaribo, pricePopCorn, priceFanta, priceCoke;
+    private static double priceHaribo, pricePopCorn, priceFanta, priceCoke, priceTickets;
 // TODO: get moviePrice
+
+    // TODO: print trailer and cardPyment
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -61,14 +63,13 @@ public class Main extends Application {
         Main.priceCoke = priceCoke;
     }
 
-//    public static String getMovingTest() {
-//        return movingTest;
-    //}
+    public static double getPriceTickets() {
+        return priceTickets;
+    }
 
-//    public static void setMovingTest(String movingTest) {
-//        Main.movingTest = movingTest;
-//    }
-
+    public static void setPriceTickets(double priceTickets) {
+        Main.priceTickets = priceTickets;
+    }
 
     public static void main(String[] args) {
         launch(args);

@@ -157,6 +157,7 @@ public class BookingController {
         Main.setPricePopCorn(pricePopCorn);
         Main.setPriceFanta(priceFanata);
         Main.setPriceCoke(priceCoke);
+        Main.setPriceTickets(priceTickets);
 
         Parent paymentPageController = FXMLLoader.load(getClass().getResource("fxml/PaymentPage.fxml"));
         Scene paymentPageScene = new Scene(paymentPageController);

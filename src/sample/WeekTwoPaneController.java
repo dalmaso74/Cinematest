@@ -30,6 +30,18 @@ public class WeekTwoPaneController {
     public void openLogan(ActionEvent actionEvent) {
         setMovie("Logan");
     }
+    public void openGreenBook(ActionEvent actionEvent) {
+        setMovie("GreenBook");
+    }
+    public void openDeadPool(ActionEvent actionEvent) {
+        setMovie("DeadPool");
+    }
+    public void openTheLegoMovie(ActionEvent actionEvent) {
+        setMovie("TheLegoMovie");
+    }
+    public void openVice(ActionEvent actionEvent) {setMovie("Vice");}
+
+
 
     private void setMovie(String movieName) {
         System.out.println("simon");
