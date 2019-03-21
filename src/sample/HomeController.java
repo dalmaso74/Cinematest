@@ -21,16 +21,11 @@ public class HomeController {
 
     @FXML
     private ComboBox weekBox;
-   // private Object contentArea;
+
 
 
     @FXML
-//    private void initialize() {
-//        weekBox.setValue("Choose a week to watch. ");
-//        weekBox.setItems(weeksList);
-//
-//    }
-
+    // send user to the movie place
     public void openMovie(ActionEvent actionEvent) throws IOException {
         Parent firstWeekParent = FXMLLoader.load(getClass().getResource("fxml/First_week.fxml"));
         Scene mainMenuPageScene = new Scene(firstWeekParent);

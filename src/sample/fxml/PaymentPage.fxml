@@ -4,10 +4,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PaymentPageController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PaymentPageController">
    <children>
-      <Button layoutX="339.0" layoutY="353.0" mnemonicParsing="false" onAction="#cashPayment" prefHeight="33.0" prefWidth="119.0" text="Cash" />
-      <Button layoutX="468.0" layoutY="353.0" mnemonicParsing="false" onAction="#cardPayment" prefHeight="33.0" prefWidth="119.0" text="Card" />
       <Label fx:id="displayPayment" alignment="TOP_LEFT" layoutX="153.0" layoutY="33.0" prefHeight="287.0" prefWidth="315.0" text="Receipt" />
+      <Button fx:id="backButton" layoutY="14.0" mnemonicParsing="false" onAction="#sendBackShowing" prefHeight="33.0" prefWidth="75.0" text="Back" />
+      <Button layoutX="495.0" layoutY="340.0" mnemonicParsing="false" onAction="#openMovie" prefHeight="33.0" prefWidth="75.0" text="Home" />
    </children>
 </AnchorPane>

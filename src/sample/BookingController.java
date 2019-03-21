@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -19,14 +20,15 @@ import java.util.Locale;
  * Created by u1863558 on 16/03/2019.
  */
 public class BookingController {
-    public SnacksList snc = new SnacksList();
+
     public Movie selected = Main.selectedMovie;
-    public Label movie, ticket, ticketBooked, totalPrice;
+    public Label movie, ticket, ticketBooked, totalPrice,movieLs;
     public Label tolPop, tolHaribo, priceLabel, tolCoke, tolFanta;
     private int ticketNumber, hariboNumber, popcornNumber, fantaNumber, cokeNumber;
     private double ticketOfMovie,hariboPrice = 2.00,popCornPrice = 1.70, drinkPrice = 1.50;
     private double priceTickets,priceHaribo,pricePopCorn,priceFanata,priceCoke;
     private NumberFormat gb = NumberFormat.getCurrencyInstance(Locale.UK);
+    public Button confirmButton, backShowing, addSButton, addDButton, subSButton, subDButton;
     public ComboBox<String> comboDrink;
     public ComboBox<String> comboFood;
 
@@ -39,12 +41,24 @@ public class BookingController {
     public void initialize(){
         comboFood.setItems(getFood);
         comboDrink.setItems(getDrink);
+        movieLs.setText(selected.getTitle());
+    }
+
+    public void enableDrink(ActionEvent actionEvent) {
+        addDButton.setDisable(false);
+        subDButton.setDisable(false);
+    }
+
+    public void enableFood(ActionEvent actionEvent) {
+        addSButton.setDisable(false);
+        subSButton.setDisable(false);
     }
 
     public void addMovie(ActionEvent actionEvent) {
         ticketOfMovie = ticketOfMovie + Main.selectedMovie.getPrice();
         ticketNumber = ticketNumber + 1;
         priceTickets = priceTickets + Main.selectedMovie.getPrice();
+        confirmButton.setDisable(false);
         ticketBooked.setText("" + ticketNumber);
         totalPrice.setText(gb.format(ticketOfMovie));
     }
@@ -52,6 +66,8 @@ public class BookingController {
     public void subMovie(ActionEvent actionEvent) {
         if (ticketNumber <= 0) {
             System.out.println("Cannot take away anymore tickets");
+            confirmButton.setDisable(true);
+
         } else {
             ticketNumber = ticketNumber - 1;
             priceTickets = priceTickets - Main.selectedMovie.getPrice();
@@ -165,4 +181,11 @@ public class BookingController {
         window.setScene(paymentPageScene);
         window.show();
     }
+
+    public void sendShowing(ActionEvent actionEvent) throws IOException{
+        Window mainWindow = backShowing.getScene().getWindow();
+        Parent newRoot = FXMLLoader.load(getClass().getResource("fxml/Showing.fxml"));
+        mainWindow.getScene().setRoot(newRoot);
+    }
+
 }

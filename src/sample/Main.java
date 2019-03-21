@@ -7,13 +7,11 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+//make them stacti so they can move around
     public static Movie selectedMovie = null;
     private static double totalPrice;
     private static double priceHaribo, pricePopCorn, priceFanta, priceCoke, priceTickets;
-// TODO: get moviePrice
 
-    // TODO: print trailer and cardPyment
 
     @Override
     public void start(Stage primaryStage) throws Exception{

@@ -56,14 +56,4 @@ public class FirstWeekController extends HomeController {
 
     }
 
-    //button to send home
-    public void openHome(ActionEvent actionEvent) throws IOException {
-        Parent homePageParent = FXMLLoader.load(getClass().getResource("fxml/HomePage.fxml"));
-        Scene mainMenuPageScene = new Scene(homePageParent);
-        Stage window = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        window.setScene(mainMenuPageScene);
-        window.show();
-    }
-
-
 }
